@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contacto - Mi Página</title>
+    <link rel="stylesheet" href="ForStyle.css" />
+</head>
+
+<body>
+
+    <header>
+        <h1>Mi Portafolio Personal</h1>
+        <nav>
+            <ul class="menu-superior">
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="#">Servicios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <form class="form-contacto" novalidate>
+            <h2>Contacto</h2>
+
+            <label for="nombre">Nombre completo:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" placeholder="tu@correo.com" required />
+
+            <label for="asunto">Asunto:</label>
+            <input type="text" id="asunto" name="asunto" placeholder="Motivo del mensaje" required />
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mi Sitio Web. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+</html>

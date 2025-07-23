@@ -1,0 +1,181 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #dcd6f7; /* fondo morado claro */
+    color: #2e1a47; /* texto oscuro morado */
+}
+
+/* Menú superior */
+header {
+    background-color: #6a4c93; /* morado fuerte */
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.menu-superior {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.menu-superior li {
+    margin: 0 1rem;
+}
+
+.menu-superior a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Contenedor general */
+.contenedor {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Menú lateral */
+.menu-lateral {
+    width: 200px;
+    background-color: #e0d9f0; /* morado muy claro */
+    padding: 1rem;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.menu-lateral ul {
+    list-style: none;
+}
+
+.menu-lateral li {
+    margin: 0.5rem 0;
+}
+
+.menu-lateral a {
+    text-decoration: none;
+    color: #4a367a; /* morado oscuro */
+}
+
+/* Contenido principal */
+.contenido-principal {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contenido-video {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Estilo común y animación a cada div */
+.descripcion,
+.video-container,
+.galeria {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover individual para cada div */
+.descripcion:hover,
+.video-container:hover,
+.galeria:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(106, 76, 147, 0.5); /* sombra morada */
+}
+
+.descripcion {
+    flex: 1;
+    background: #f0efff; /* gris muy claro */
+    padding: 1rem;
+    border-radius: 8px;
+    min-width: 200px;
+    color: #2e1a47;
+}
+
+/* Video container actualizado para iframe responsive */
+.video-container {
+    flex: 2;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(106, 76, 147, 0.2);
+    min-width: 300px;
+    max-width: 800px;
+    color: #2e1a47;
+
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 ratio */
+    height: 0;
+    overflow: hidden;
+    background-color: white;
+    margin: 0 auto;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.galeria {
+    flex: 1;
+    background: #f0efff; /* gris muy claro */
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(106, 76, 147, 0.2);
+    min-width: 250px;
+    color: #2e1a47;
+}
+
+.imagenes {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.imagenes img {
+    width: 100px;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+/* Pie de página */
+footer {
+    background-color: #6a4c93; /* morado fuerte */
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+    }
+
+    .menu-superior {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contenido-video {
+        flex-direction: column;
+    }
+
+    .menu-lateral {
+        width: 100%;
+    }
+}
