@@ -68,6 +68,12 @@ header {
     color: #2563eb;
 }
 
+/*Animación cuando se pase el mouse*/
+.menu-lateral:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(106, 76, 147, 0.5);
+}
+
 /* Contenido principal */
 .contenido-principal {
     flex: 1;
