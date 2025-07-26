@@ -515,7 +515,8 @@ body.modo-oscuro {
 body.modo-oscuro h2, 
 body.modo-oscuro h3,
 body.modo-oscuro p,
-body.modo-oscuro li {
+body.modo-oscuro li, 
+body.modo-oscuro a{
     color: #70d6ff;
 }
 
