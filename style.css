@@ -69,9 +69,16 @@ header {
 }
 
 /*Animación cuando se pase el mouse*/
-.menu-lateral:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(106, 76, 147, 0.5);
+.menu-lateral ul li a {
+    display: block; /* Hace que el enlace sea un bloque completo */
+    padding: 0.5rem 1rem; /* Espaciado interno para el "rectángulo" */
+    border-radius: 8px; /* Bordes redondeados */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-lateral ul li a:hover {
+    background-color: #2563eb; /* Fondo azul al pasar mouse */
+    color: white; /* Texto blanco */
 }
 
 /* Contenido principal */
