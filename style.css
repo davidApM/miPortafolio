@@ -463,7 +463,7 @@ textarea:focus {
     margin-top: 20px;
     width: 100%;
     padding: 10px 15px;
-    background-color: #333;
+    background-color: #3b82f6;
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -474,7 +474,7 @@ textarea:focus {
 }
 
 #modo-toggle:hover {
-    background-color: #555;
+    background-color: #60a5fa;
 }
 
 
@@ -549,8 +549,9 @@ body.modo-oscuro .proyecto {
     border: 1px solid #444;
 }
 
+/*Modifica el color del boton en modo oscuro*/
 body.modo-oscuro #modo-toggle {
-    background-color: #eee;
+    background-color: #70d6ff;
     color: #000;
 }
 
@@ -563,7 +564,7 @@ body.modo-oscuro .perfil {
 }
 
 /* FORMULARIO en modo oscuro */
-body.modo-oscuro .contenido-principal-formulario {
+body.modo-oscuro .contenido-principal-formulario{
     background-color: #1e1e1e;
     color: #70d6ff;
     border: 1px solid #444;
@@ -578,9 +579,26 @@ body.modo-oscuro textarea {
     border: 1px solid #555;
 }
 
-body.modo-oscuro label {
+body.modo-oscuro label{
     color: #70d6ff;
 }
+
+/*Para modificar eñ boton*/
+body.modo-oscuro #enviar-formulario {
+    background-color: #70d6ff;   /* Color de fondo */
+    color: #1e1e1e;              /* Color del texto */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+body.modo-oscuro #enviar-formulario:hover {
+    background-color: #60a5fa;  /* Color al pasar el mouse */
+}
+
 
 /* PROYECTOS en modo oscuro */
 body.modo-oscuro .contenido-principal-Proyectos,
