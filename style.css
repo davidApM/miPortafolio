@@ -70,16 +70,79 @@ header {
 
 /*Animación cuando se pase el mouse*/
 .menu-lateral ul li a {
-    display: block; /* Hace que el enlace sea un bloque completo */
-    padding: 0.5rem 1rem; /* Espaciado interno para el "rectángulo" */
-    border-radius: 8px; /* Bordes redondeados */
+    display: block;
+    /* Hace que el enlace sea un bloque completo */
+    padding: 0.5rem 1rem;
+    /* Espaciado interno para el "rectángulo" */
+    border-radius: 8px;
+    /* Bordes redondeados */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .menu-lateral ul li a:hover {
-    background-color: #2563eb; /* Fondo azul al pasar mouse */
-    color: white; /* Texto blanco */
+    background-color: #2563eb;
+    /* Fondo azul al pasar mouse */
+    color: white;
+    /* Texto blanco */
 }
+
+/* Estilo general para las secciones */
+.descripcion {
+    background-color: #f0f4f8;
+    border-left: 5px solid #70d6ff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.descripcion:hover {
+    transform: translateY(-5px);
+}
+
+/* Títulos */
+.descripcion h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #70d6ff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Párrafos */
+.descripcion p {
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Listas */
+.descripcion ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.descripcion ul li {
+    padding: 8px 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Enlaces en redes sociales */
+.descripcion a {
+    color: #0077cc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.descripcion a:hover {
+    color: #005fa3;
+    text-decoration: underline;
+}
+
 
 /* Contenido principal */
 .contenido-principal {
@@ -386,17 +449,23 @@ textarea:focus {
 
 /* Botón modo oscuro */
 #modo-toggle {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    padding: 8px 12px;
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px 15px;
     background-color: #333;
     color: #fff;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    z-index: 1000;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
+
+#modo-toggle:hover {
+    background-color: #555;
+}
+
 
 /* Pie de página */
 footer {

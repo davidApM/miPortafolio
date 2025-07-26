@@ -9,7 +9,6 @@
 </head>
 
 <body>
-
     <header>
         <h1>Mi Portafolio Personal</h1>
         <nav>
@@ -20,35 +19,49 @@
         </nav>
     </header>
 
-    <!--Boto de modo oscuro o claro -->
-    <button id="modo-toggle">🌙 Modo oscuro</button>
 
-    <main class="contenido-principal-formulario">
-        <section class="seccion-contacto">
-            <form class="form-contacto" novalidate>
-                <h2>Contacto</h2>
+    <div class="contenedor">
+        <!--Menu lateral-->
+        <aside class="menu-lateral">
+            <h2>Menú</h2>
+            <ul>
+                <li><a href="./perfil.html">Perfil</a></li>
+                <li><a href="./index.html#sobre-mi">Sobre mí</a></li>
+                <li><a href="./proyectos.html">Proyectos</a></li>
+                <li><a href="./index.html#habilidades">Habilidades</a></li>
+                <li><a href="./formulario.html">Contacto</a></li>
+                <li><a href="./index.html#redes-sociales">Redes sociales</a></li>
+            </ul>
+            <button id="modo-toggle">🌙 Modo oscuro</button>
+        </aside>
 
-                <fieldset>
-                    <label for="nombre">Nombre completo:</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="name" required />
+        <main class="contenido-principal-formulario">
+            <section class="seccion-contacto">
+                <form class="form-contacto" novalidate>
+                    <h2>Contacto</h2>
 
-                    <label for="email">Correo electrónico:</label>
-                    <input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email"
-                        required />
+                    <fieldset>
+                        <label for="nombre">Nombre completo:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="name"
+                            required />
 
-                    <label for="asunto">Asunto:</label>
-                    <input type="text" id="asunto" name="asunto" placeholder="Motivo del mensaje" required />
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email"
+                            required />
 
-                    <label for="mensaje">Mensaje:</label>
-                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..."
-                        required></textarea>
+                        <label for="asunto">Asunto:</label>
+                        <input type="text" id="asunto" name="asunto" placeholder="Motivo del mensaje" required />
 
-                    <button id="enviar-formulario" type="submit">Enviar</button>
-                </fieldset>
-            </form>
-        </section>
-    </main>
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..."
+                            required></textarea>
 
+                        <button id="enviar-formulario" type="submit">Enviar</button>
+                    </fieldset>
+                </form>
+            </section>
+        </main>
+    </div>
     <footer>
         <p>&copy; 2025 Mi Sitio Web. Todos los derechos reservados.</p>
     </footer>
