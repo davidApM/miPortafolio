@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <title>Proyectos - Mi Portafolio</title>
-    <link rel="stylesheet" href="proyectos.css" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -20,31 +22,40 @@
             </ul>
         </nav>
     </header>
+    <!--Boto de modo oscuro o claro -->
+    <button id="modo-toggle">🌙 Modo oscuro</button>
 
-    <main>
+    <main class="contenido-principal-Proyectos">
         <section id="proyectos" class="proyectos">
             <h2>Proyectos</h2>
             <div class="lista-proyectos">
 
                 <article class="proyecto">
-                    <h3>Proyecto 1</h3>
+                    <h3>Portafolio Personal</h3>
                     <img src="./imagenes/ima1.png" alt="Vista previa del Proyecto 1" class="img-proyecto">
                     <p>Diseñé una página web personal con HTML y CSS para mostrar mi perfil, habilidades y formas de
                         contacto de manera clara y visual.</p>
                 </article>
 
                 <article class="proyecto">
-                    <h3>Proyecto 2</h3>
+                    <h3>Catálogo de Productos</h3>
                     <img src="./imagenes/img2.png" alt="Vista previa del Proyecto 2" class="img-proyecto">
                     <p>Creé un catálogo online usando HTML, CSS y un poco de JavaScript donde se muestran productos con
                         imágenes, precios y una breve descripción.</p>
                 </article>
 
                 <article class="proyecto">
-                    <h3>Proyecto 3</h3>
+                    <h3>Formulario Interactivo</h3>
                     <img src="./imagenes/im3.jpg" alt="Vista previa del Proyecto 3" class="img-proyecto">
                     <p>Desarrollé un formulario responsivo que permite a los usuarios enviar mensajes. Utiliza HTML para
                         la estructura y CSS para el diseño atractivo.</p>
+                </article>
+
+                <article class="proyecto">
+                    <h3>Página de Cumpleaños Especial</h3>
+                    <img src="./imagenes/img8.jpg" alt="Vista previa del Proyecto 4" class="img-proyecto">
+                    <p>Diseñé una página web para una persona especial, para su cumpleaños, utilizando HTML, CSS y un
+                        poco de JavaScript.</p>
                 </article>
 
             </div>
@@ -57,5 +68,23 @@
     </footer>
 
 </body>
+<!--Un poco de js para la función del boton-->
+<script>
+    const boton = document.getElementById('modo-toggle');
+    const body = document.body;
+
+    const modoGuardado = localStorage.getItem('modo');
+    if (modoGuardado === 'oscuro') {
+        body.classList.add('modo-oscuro');
+        boton.textContent = '☀️ Modo claro';
+    }
+
+    boton.addEventListener('click', () => {
+        body.classList.toggle('modo-oscuro');
+        const modo = body.classList.contains('modo-oscuro') ? 'oscuro' : 'claro';
+        localStorage.setItem('modo', modo);
+        boton.textContent = modo === 'oscuro' ? '☀️ Modo claro' : '🌙 Modo oscuro';
+    });
+</script>
 
 </html>

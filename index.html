@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <title>Página Completa</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
+<body class="index">
 
     <!-- Menú superior -->
     <header>
@@ -21,6 +23,8 @@
             </ul>
         </nav>
     </header>
+    <!--Boto de modo oscuro o claro -->
+    <button id="modo-toggle">🌙 Modo oscuro</button>
 
 
     <div class="contenedor">
@@ -83,5 +87,24 @@
     </footer>
 
 </body>
+
+<!--Un poco de js para la función del boton-->
+<script>
+    const boton = document.getElementById('modo-toggle');
+    const body = document.body;
+
+    const modoGuardado = localStorage.getItem('modo');
+    if (modoGuardado === 'oscuro') {
+        body.classList.add('modo-oscuro');
+        boton.textContent = '☀️ Modo claro';
+    }
+
+    boton.addEventListener('click', () => {
+        body.classList.toggle('modo-oscuro');
+        const modo = body.classList.contains('modo-oscuro') ? 'oscuro' : 'claro';
+        localStorage.setItem('modo', modo);
+        boton.textContent = modo === 'oscuro' ? '☀️ Modo claro' : '🌙 Modo oscuro';
+    });
+</script>
 
 </html>

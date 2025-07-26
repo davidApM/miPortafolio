@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <title>Perfil - Mi Portafolio</title>
-    <link rel="stylesheet" href="perfil.css" />
+    <link rel="stylesheet" href="/style.css" />
 </head>
 
 <body>
@@ -21,7 +23,10 @@
         </nav>
     </header>
 
-    <main>
+        <!--Boto de modo oscuro o claro -->
+    <button id="modo-toggle">🌙 Modo oscuro</button>
+
+    <main class="contenido-principal-Perfil">
         <section id="perfil" class="perfil">
             <h2>Perfil</h2>
             <div class="contenido-perfil">
@@ -41,5 +46,23 @@
     </footer>
 
 </body>
+<!--Un poco de js para la función del boton-->
+<script>
+    const boton = document.getElementById('modo-toggle');
+    const body = document.body;
+
+    const modoGuardado = localStorage.getItem('modo');
+    if (modoGuardado === 'oscuro') {
+        body.classList.add('modo-oscuro');
+        boton.textContent = '☀️ Modo claro';
+    }
+
+    boton.addEventListener('click', () => {
+        body.classList.toggle('modo-oscuro');
+        const modo = body.classList.contains('modo-oscuro') ? 'oscuro' : 'claro';
+        localStorage.setItem('modo', modo);
+        boton.textContent = modo === 'oscuro' ? '☀️ Modo claro' : '🌙 Modo oscuro';
+    });
+</script>
 
 </html>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Contacto - Mi Página</title>
-    <link rel="stylesheet" href="ForStyle.css" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -20,24 +20,34 @@
         </nav>
     </header>
 
-    <main>
-        <form class="form-contacto" novalidate>
-            <h2>Contacto</h2>
+    <!--Boto de modo oscuro o claro -->
+    <button id="modo-toggle">🌙 Modo oscuro</button>
 
-            <label for="nombre">Nombre completo:</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
 
-            <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email" placeholder="tu@correo.com" required />
+    <main class="contenido-principal-formulario">
+        <section class="seccion-contacto">
+            <form class="form-contacto" novalidate>
+                <h2>Contacto</h2>
 
-            <label for="asunto">Asunto:</label>
-            <input type="text" id="asunto" name="asunto" placeholder="Motivo del mensaje" required />
+                <fieldset>
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="name" required />
 
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email"
+                        required />
 
-            <button type="submit">Enviar</button>
-        </form>
+                    <label for="asunto">Asunto:</label>
+                    <input type="text" id="asunto" name="asunto" placeholder="Motivo del mensaje" required />
+
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..."
+                        required></textarea>
+
+                    <button id="enviar-formulario" type="submit">Enviar</button>
+                </fieldset>
+            </form>
+        </section>
     </main>
 
     <footer>
@@ -45,5 +55,23 @@
     </footer>
 
 </body>
+<!--Un poco de js para la función del boton-->
+<script>
+    const boton = document.getElementById('modo-toggle');
+    const body = document.body;
+
+    const modoGuardado = localStorage.getItem('modo');
+    if (modoGuardado === 'oscuro') {
+        body.classList.add('modo-oscuro');
+        boton.textContent = '☀️ Modo claro';
+    }
+
+    boton.addEventListener('click', () => {
+        body.classList.toggle('modo-oscuro');
+        const modo = body.classList.contains('modo-oscuro') ? 'oscuro' : 'claro';
+        localStorage.setItem('modo', modo);
+        boton.textContent = modo === 'oscuro' ? '☀️ Modo claro' : '🌙 Modo oscuro';
+    });
+</script>
 
 </html>
