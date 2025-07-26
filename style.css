@@ -284,9 +284,12 @@ header {
     padding: 2rem;
     max-width: 600px;
     margin: 0 auto;
-    background: #ffffff; /* Fondo blanco */
-    border-radius: 16px; /* Bordes más redondeados */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave y difusa */
+    background: #ffffff;
+    /* Fondo blanco */
+    border-radius: 16px;
+    /* Bordes más redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* Sombra suave y difusa */
     border: 1px solid #e0e0e0;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -347,19 +350,21 @@ textarea:focus {
     margin: 2rem auto;
     width: 60%;
     padding: 1.0rem;
-    background: #2563eb; 
+    background: #2563eb;
     color: #fff;
     font-weight: bold;
     font-size: 1.05rem;
-    border: none; /*Quita cualquier borde predeterminado del botón.*/
-    border-radius: 8px; /*Le da esquinas redondeadas*/
+    border: none;
+    /*Quita cualquier borde predeterminado del botón.*/
+    border-radius: 8px;
+    /*Le da esquinas redondeadas*/
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(106, 76, 147, 0.3);
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
 #enviar-formulario:hover {
-    background: #3b82f6; 
+    background: #3b82f6;
     transform: scale(1.03);
 }
 
@@ -444,5 +449,28 @@ body.modo-oscuro #modo-toggle {
 
     .menu-lateral {
         width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .contenido-principal-Perfil {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .contenido-perfil {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .foto-perfil {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1rem;
+    }
+
+    .descripcion-perfil {
+        font-size: 0.95rem;
     }
 }
