@@ -29,11 +29,11 @@
         <!--Menu lateral-->
         <aside class="menu-lateral">
             <h2>Menú</h2>
-                <ul>
-                    <li><a href="/index.html#sobre-mi"><i class="fas fa-user"></i> Sobre mí</a></li>
-                    <li><a href="/index.html#habilidades"><i class="fas fa-code"></i> Habilidades</a></li>
-                    <li><a href="/index.html#redes-sociales"><i class="fas fa-share-alt"></i> Redes sociales</a></li>
-                </ul>
+            <ul>
+                <li><a href="/index.html#sobre-mi"><i class="fas fa-user"></i> Sobre mí</a></li>
+                <li><a href="/index.html#habilidades"><i class="fas fa-code"></i> Habilidades</a></li>
+                <li><a href="/index.html#redes-sociales"><i class="fas fa-share-alt"></i> Redes sociales</a></li>
+            </ul>
             <button id="modo-toggle">🌙 Modo oscuro</button>
         </aside>
 
@@ -59,28 +59,33 @@
                             required></textarea>
 
                         <button id="enviar-formulario" type="submit">Enviar</button>
+                        <div id="mensaje-exito"
+                            style="display: none; margin-top: 1rem; color: green; font-weight: bold;">
+                            ¡Mensaje enviado con éxito!
+                        </div>
+
                     </fieldset>
                 </form>
             </section>
         </main>
     </div>
     <!--Footer-->
-<footer class="footer">
-    <div class="footer-content">
-        <p>&copy; 2025 Mi Portafolio Personal</p>
-        <div class="footer-redes">
-            <a href="https://facebook.com" target="_blank">
-                <i class="fab fa-facebook-f"></i> Facebook
-            </a>
-            <a href="https://instagram.com" target="_blank">
-                <i class="fab fa-instagram"></i> Instagram
-            </a>
-            <a href="https://linkedin.com" target="_blank">
-                <i class="fab fa-linkedin-in"></i> LinkedIn
-            </a>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Mi Portafolio Personal</p>
+            <div class="footer-redes">
+                <a href="https://facebook.com" target="_blank">
+                    <i class="fab fa-facebook-f"></i> Facebook
+                </a>
+                <a href="https://instagram.com" target="_blank">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+                <a href="https://linkedin.com" target="_blank">
+                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                </a>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
 
 
@@ -119,6 +124,30 @@
         }
     });
 
-</script>
+    //Función para validar el formulario. 
+        document.querySelector(".form-contacto").addEventListener("submit", function (e) {
+            e.preventDefault();
 
+        const nombre = document.getElementById("nombre").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const asunto = document.getElementById("asunto").value.trim();
+        const mensaje = document.getElementById("mensaje").value.trim();
+        const mensajeExito = document.getElementById("mensaje-exito");
+
+        if (!nombre || !email || !asunto || !mensaje) {
+            mensajeExito.style.display = "none";
+        alert("Por favor, completa todos los campos.");
+        return;
+    }
+
+        // Mostrar mensaje bonito
+        mensajeExito.style.display = "block";
+
+    // Opcional: ocultarlo después de unos segundos
+    setTimeout(() => {mensajeExito.style.display = "none";
+        }, 4000);
+        // Limpiar formulario
+        this.reset();
+    });
+</script>
 </html>
