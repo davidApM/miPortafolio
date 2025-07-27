@@ -89,10 +89,19 @@
     // Función para el boton Hamburguesa 
     const toggle = document.getElementById('hamburguesa-toggle');
     const menu = document.getElementById('menu-superior');
+    const menuLateral = document.querySelector('.menu-lateral');
 
     toggle.addEventListener('click', () => {
         menu.classList.toggle('mostrar');
+
+        // Si abrimos el menú hamburguesa, ocultamos lateral
+        if (menu.classList.contains('mostrar')) {
+            menuLateral.classList.add('oculto');
+        } else {
+            menuLateral.classList.remove('oculto');
+        }
     });
+
 </script>
 
 </html>
