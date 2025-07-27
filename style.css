@@ -569,8 +569,7 @@ body.modo-oscuro li {
 
 
 body.modo-oscuro header,
-body.modo-oscuro footer
-{
+body.modo-oscuro footer {
     background-color: #1e1e1e;
     color: #70d6ff;
 }
@@ -596,6 +595,7 @@ body.modo-oscuro .menu-superior a:hover {
     background-color: #2563eb;
     color: #fff;
 }
+
 /*Fin del modo oscuro de ambos menú*/
 
 
@@ -664,8 +664,7 @@ body.modo-oscuro #enviar-formulario:hover {
 /* PROYECTOS en modo oscuro */
 
 body.modo-oscuro .contenido-principal-Proyectos,
-body.modo-oscuro .proyectos
-{
+body.modo-oscuro .proyectos {
     background-color: #1e1e1e;
     color: #f5f5f5;
     box-shadow: 0 4px 15px rgba(96, 165, 250, 0.3);
@@ -684,30 +683,58 @@ body.modo-oscuro .proyecto h3 {
 /* Responsivo */
 @media (max-width: 768px) {
 
+    /* HEADER */
+    header {
+        position: relative;
+        z-index: 10;
+    }
+
     header h1 {
         font-size: 1.5rem;
         padding: 0.5rem 0;
     }
 
-    .contenedor {
-        flex-direction: column;
+    .hamburguesa {
+        display: block;
     }
 
+    /* MENÚ SUPERIOR */
     .menu-superior {
+        display: none;
         flex-direction: column;
-        align-items: center;
-    }
-
-    .contenido-video {
-        flex-direction: column;
-    }
-
-    .menu-lateral {
+        background-color: #e9edf1;
+        color: #a1bfd8;
+        font-family: 'Inter', sans-serif;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
         width: 100%;
     }
-}
 
-@media (max-width: 768px) {
+    .menu-superior.mostrar {
+        display: flex;
+    }
+
+    .menu-superior a {
+        text-decoration: none;
+        color: #2563eb;
+    }
+
+    .menu-superior ul li a {
+        display: block;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        cursor: pointer;
+    }
+
+    .menu-superior ul li a:hover {
+        background-color: #2563eb;
+        color: white;
+    }
+
+    /* PERFIL */
     .contenido-principal-Perfil {
         max-width: 100%;
         padding: 1rem;
@@ -728,58 +755,14 @@ body.modo-oscuro .proyecto h3 {
     .descripcion-perfil {
         font-size: 0.95rem;
     }
-}
 
-/* Responsive para móviles */
-@media (max-width: 768px) {
-    header {
-        position: relative;
-        z-index: 10;
-    }
-
-    .hamburguesa {
-        display: block;
-    }
-
-    .menu-superior {
-        display: none;
+    /* OTROS CONTENEDORES */
+    .contenedor,
+    .contenido-video {
         flex-direction: column;
-        background-color: #e9edf1;
-        /*Color del menú hamburguesa*/
-        color: #a1bfd8;
-        /*Color del texto hamburguesa*/
-        font-family: 'Inter', sans-serif;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
+    }
+
+    .menu-lateral {
         width: 100%;
-    }
-
-    /*Animación cuando se pase el mouse*/
-    #menu-superior ul li a {
-        display: block;
-        /* Hace que el enlace sea un bloque completo */
-        padding: 0.5rem 1rem;
-        /* Espaciado interno para el "rectángulo" */
-        border-radius: 8px;
-        /* Bordes redondeados */
-        transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    #menu-superior ul li a:hover {
-        background-color: #2563eb;
-        /* Fondo azul al pasar mouse */
-        color: white;
-        /* Texto blanco */
-    }
-
-    #menu-superior a {
-        text-decoration: none;
-        color: #2563eb;
-    }
-
-    .menu-superior.mostrar {
-        display: flex;
     }
 }
