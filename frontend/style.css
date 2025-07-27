@@ -1,0 +1,776 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f4f9;
+    color: #1c1c1e;
+}
+
+/* Estilos del header */
+header {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #2563eb;
+    color: white;
+}
+
+header h1 {
+    font-size: 2rem;
+    text-align: center;
+    flex: 1;
+    word-break: break-word;
+}
+
+/* Menú por defecto */
+.menu-superior ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+.menu-superior a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Botón hamburguesa */
+/*Este código modifica la imagen de hamburguesa*/
+.hamburguesa {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+/*Modificar cerrar y abrir el nuevo menú */
+.menu-lateral {
+    /* visible por defecto */
+    transition: transform 0.3s ease;
+}
+
+/* clase para ocultar el menú lateral */
+.menu-lateral.oculto {
+    transform: translateX(-100%);
+    /* o display:none, pero con transform queda mejor para animar */
+}
+
+/*Fin del código para abrir y cerrar */
+
+/* Contenedor general */
+.contenedor {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Menú lateral */
+.menu-lateral {
+    width: 200px;
+    background-color: #e9edf1;
+    padding: 1rem;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.menu-lateral ul {
+    list-style: none;
+}
+
+.menu-lateral li {
+    margin: 0.5rem 0;
+}
+
+.menu-lateral a {
+    text-decoration: none;
+    color: #2563eb;
+}
+
+/*Animación cuando se pase el mouse*/
+.menu-lateral ul li a {
+    display: block;
+    /* Hace que el enlace sea un bloque completo */
+    padding: 0.5rem 1rem;
+    /* Espaciado interno para el "rectángulo" */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-lateral ul li a:hover {
+    background-color: #2563eb;
+    /* Fondo azul al pasar mouse */
+    color: white;
+    /* Texto blanco */
+}
+
+/* Estilo general para las secciones */
+.descripcion {
+    background-color: #f0f4f8;
+    border-left: 5px solid #70d6ff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.descripcion:hover {
+    transform: translateY(-5px);
+}
+
+/* Títulos */
+.descripcion h2,
+h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #70d6ff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Párrafos */
+.descripcion p {
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Listas */
+.descripcion ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.descripcion ul li {
+    padding: 8px 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Enlaces en redes sociales */
+.descripcion a {
+    color: #0077cc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.descripcion a:hover {
+    color: #005fa3;
+    text-decoration: underline;
+}
+
+
+/* Contenido principal */
+.contenido-principal {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contenido-video {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Hover y animaciones */
+.descripcion,
+.video-container,
+.galeria {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.descripcion:hover,
+.video-container:hover,
+.galeria:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+.descripcion {
+    flex: 1;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    min-width: 200px;
+}
+
+/* Video container responsive */
+.video-container {
+    flex: 2;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(37, 99, 235, 0.2);
+    min-width: 300px;
+    max-width: 800px;
+    background-color: white;
+    color: #1c1c1e;
+
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/*No esta activa ya*/
+.galeria {
+    flex: 1;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(37, 99, 235, 0.2);
+    min-width: 250px;
+}
+
+/*No esta activa ya*/
+
+.imagenes {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1.0rem;
+}
+
+.imagenes img {
+    width: 100px;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+/*Agrega un estilo a las imagenes de zoom cuando pasa el mouse*/
+.imagenes img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+/*Diseño para el perfil*/
+
+.contenido-principal-Perfil {
+    flex: 1;
+    padding: 2rem 1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    background: #f0efff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(106, 76, 147, 0.2);
+}
+
+.perfil {
+    background: #f0efff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(106, 76, 147, 0.2);
+    color: #2e1a47;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.perfil:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(106, 76, 147, 0.5);
+}
+
+.perfil h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.contenido-perfil {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.foto-perfil {
+    border-radius: 60%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    box-shadow: 0 2px 10px rgba(106, 76, 147, 0.3);
+}
+
+.descripcion-perfil {
+    flex: 1;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/*Diseño para los proyectos*/
+.contenido-principal-Proyectos {
+    flex: 1;
+    padding: 2rem 1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    background: #f0efff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(106, 76, 147, 0.2);
+}
+
+/*Sección completa de cada DIV*/
+.proyectos {
+    background: #f0efff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(106, 76, 147, 0.2);
+    color: #2e1a47;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/*Animación cuando se pase el mouse*/
+.proyectos:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(106, 76, 147, 0.5);
+}
+
+/*Diseño básicos de h2, h3 y p*/
+.proyectos h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.proyecto h3 {
+    margin-bottom: 0.3rem;
+    color: #2563eb;
+    ;
+}
+
+.proyecto p {
+    font-size: 0.95rem;
+    line-height: 1.3;
+}
+
+/*Le da diseño a la lista de cada proyecto de forma horizontal*/
+.lista-proyectos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Cada proyecto se ajusta en horizontal */
+.proyecto {
+    background: white;
+    padding: 0.8rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(106, 76, 147, 0.1);
+    width: calc(33.33% - 1rem);
+    /* 3 por fila con separación */
+    min-width: 250px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.img-proyecto {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+    margin: 0.5rem 0;
+    box-shadow: 0 1px 5px rgba(106, 76, 147, 0.3);
+}
+
+/*Fin del diseño de los proyectos */
+
+/* Contenedor principal del formulario */
+.contenido-principal-formulario {
+    flex: 1;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff;
+    /* Fondo blanco */
+    border-radius: 16px;
+    /* Bordes más redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* Sombra suave y difusa */
+    border: 1px solid #e0e0e0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.contenido-principal-formulario:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(106, 76, 147, 0.4);
+}
+
+/*Elimina el borde del formulario */
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Título centrado */
+form h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #3b82f6;
+}
+
+/* Etiquetas */
+label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #3b82f6;
+}
+
+/* Campos de entrada y textarea */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 0.7rem;
+    margin-top: 0.3rem;
+    border: 1px solid #bbaae0;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #333;
+    transition: border-color 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #6a4c93;
+    outline: none;
+}
+
+/* Botón centrado y estilizado */
+#enviar-formulario {
+    display: block;
+    margin: 2rem auto;
+    width: 60%;
+    padding: 1.0rem;
+    background: #2563eb;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.05rem;
+    border: none;
+    /*Quita cualquier borde predeterminado del botón.*/
+    border-radius: 8px;
+    /*Le da esquinas redondeadas*/
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(106, 76, 147, 0.3);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#enviar-formulario:hover {
+    background: #3b82f6;
+    transform: scale(1.03);
+}
+
+
+/*Fin del diseño de Boton para enviar información*/
+
+/* Botón modo oscuro */
+#modo-toggle {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #3b82f6;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#modo-toggle:hover {
+    background-color: #60a5fa;
+}
+
+
+/* Pie de página */
+.footer {
+    background-color: #3b82f6;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-redes a {
+    color: white;
+    margin: 0 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-redes a:hover {
+    color: #ffe082;
+}
+
+.footer-redes a i {
+    margin-right: 6px;
+}
+
+/* MODO OSCURO */
+body.modo-oscuro {
+    background-color: #121212;
+    color: #f5f5f5;
+}
+
+body.modo-oscuro a {
+    color: #90e0ef;
+}
+
+
+body.modo-oscuro h1 {
+    color: #a1bfd8
+}
+
+body.modo-oscuro h2,
+body.modo-oscuro h3 {
+    color: #a1bfd8;
+}
+
+
+body.modo-oscuro p,
+body.modo-oscuro li {
+    color: #e0f2f1;
+}
+
+
+body.modo-oscuro header,
+body.modo-oscuro footer {
+    background-color: #1e1e1e;
+    color: #70d6ff;
+}
+
+/*Diseño de ambos menús en modo oscuro*/
+body.modo-oscuro .menu-lateral,
+body.modo-oscuro .menu-superior {
+    background-color: #1e1e1e;
+    color: #70d6ff;
+    border-top: 1px solid #444;
+    /* Opcional para consistencia */
+    border-bottom: 1px solid #444;
+}
+
+body.modo-oscuro .menu-lateral a,
+body.modo-oscuro .menu-superior a {
+    color: #70d6ff;
+    text-decoration: none;
+}
+
+body.modo-oscuro .menu-lateral a:hover,
+body.modo-oscuro .menu-superior a:hover {
+    background-color: #2563eb;
+    color: #fff;
+}
+
+/*Fin del modo oscuro de ambos menú*/
+
+
+body.modo-oscuro .descripcion,
+body.modo-oscuro .galeria,
+body.modo-oscuro .video-container {
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 10px rgba(96, 165, 250, 0.3);
+}
+
+
+/*Modifica el color del boton en modo oscuro*/
+body.modo-oscuro #modo-toggle {
+    background-color: #70d6ff;
+    color: #000;
+}
+
+/* PERFIL en modo oscuro */
+body.modo-oscuro .contenido-principal-Perfil,
+body.modo-oscuro .perfil {
+    background-color: #1e1e1e;
+    color: #70d6ff;
+    box-shadow: 0 4px 15px rgba(96, 165, 250, 0.3);
+}
+
+/* FORMULARIO en modo oscuro */
+body.modo-oscuro .contenido-principal-formulario {
+    background-color: #1e1e1e;
+    color: #70d6ff;
+    border: 1px solid #444;
+    box-shadow: 0 4px 15px rgba(96, 165, 250, 0.3);
+}
+
+body.modo-oscuro input[type="text"],
+body.modo-oscuro input[type="email"],
+body.modo-oscuro textarea {
+    background-color: #2a2a2a;
+    color: #f5f5f5;
+    border: 1px solid #555;
+}
+
+body.modo-oscuro label {
+    color: #70d6ff;
+}
+
+/*Para modificar eñ boton*/
+body.modo-oscuro #enviar-formulario {
+    background-color: #70d6ff;
+    /* Color de fondo */
+    color: #1e1e1e;
+    /* Color del texto */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+body.modo-oscuro #enviar-formulario:hover {
+    background-color: #60a5fa;
+    /* Color al pasar el mouse */
+}
+
+
+/* PROYECTOS en modo oscuro */
+
+body.modo-oscuro .contenido-principal-Proyectos,
+body.modo-oscuro .proyectos {
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+    box-shadow: 0 4px 15px rgba(96, 165, 250, 0.3);
+}
+
+body.modo-oscuro .proyecto {
+    background-color: #2a2a2a;
+    color: #70d6ff;
+    border: 1px solid #444;
+}
+
+body.modo-oscuro .proyecto h3 {
+    color: #60a5fa;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+
+    /* HEADER */
+    header {
+        position: relative;
+        z-index: 10;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        padding: 0.5rem 0;
+    }
+
+    .hamburguesa {
+        display: block;
+    }
+
+    /* MENÚ SUPERIOR */
+   .menu-superior {
+    display: none;
+    flex-direction: column;
+    background-color: #e9edf1;
+    color: #a1bfd8;
+    font-family: 'Inter', sans-serif;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.menu-superior.mostrar {
+    display: flex;
+}
+
+.menu-superior ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-superior a {
+    text-decoration: none;
+    color: #2563eb;
+}
+
+.menu-superior ul li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.menu-superior ul li a:hover {
+    background-color: #2563eb;
+    color: white;
+}
+
+
+    /* PERFIL */
+    .contenido-principal-Perfil {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .contenido-perfil {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .foto-perfil {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1rem;
+    }
+
+    .descripcion-perfil {
+        font-size: 0.95rem;
+    }
+
+    /* OTROS CONTENEDORES */
+    .contenedor,
+    .contenido-video {
+        flex-direction: column;
+    }
+
+    .menu-lateral {
+        width: 100%;
+    }
+}

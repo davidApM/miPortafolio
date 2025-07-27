@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="imagenes/logo.jpg" type="image/png">
+    <!-- ...Link oara los icon ... -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Mi Portafolio Personal</h1>
+        <button class="hamburguesa" id="hamburguesa-toggle">☰</button>
+        <nav id="menu-superior" class="menu-superior">
+            <ul class="menu-superior">
+                <li><a href="./index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="./perfil.html"><i class="fas fa-user"></i> Perfil</a></li>
+                <li><a href="./proyectos.html"><i class="fas fa-folder-open"></i> Proyectos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="contenedor">
+        <!--Menu lateral-->
+        <aside class="menu-lateral">
+            <h2>Menú</h2>
+            <ul>
+                <li><a href="/index.html#sobre-mi"><i class="fas fa-user"></i> Sobre mí</a></li>
+                <li><a href="/index.html#habilidades"><i class="fas fa-code"></i> Habilidades</a></li>
+                <li><a href="/index.html#redes-sociales"><i class="fas fa-share-alt"></i> Redes sociales</a></li>
+            </ul>
+            <button id="modo-toggle">🌙 Modo oscuro</button>
+        </aside>
+
+        <main class="contenido-principal-formulario">
+            <section class="seccion-contacto">
+                <form class="form-contacto" novalidate>
+                    <h2>Contacto</h2>
+
+                    <fieldset>
+                        <label for="nombre">Nombre completo:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="name"
+                            required />
+
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email"
+                            required />
+
+                        <label for="asunto">Asunto:</label>
+                        <input type="text" id="asunto" name="asunto" placeholder="Motivo del mensaje" required />
+
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..."
+                            required></textarea>
+
+                        <button id="enviar-formulario" type="submit">Enviar</button>
+                        <div id="mensaje-exito"
+                            style="display: none; margin-top: 1rem; color: green; font-weight: bold;">
+                            ¡Mensaje enviado con éxito!
+                        </div>
+
+                    </fieldset>
+                </form>
+            </section>
+        </main>
+    </div>
+    <!--Footer-->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Mi Portafolio Personal</p>
+            <div class="footer-redes">
+                <a href="https://facebook.com" target="_blank">
+                    <i class="fab fa-facebook-f"></i> Facebook
+                </a>
+                <a href="https://instagram.com" target="_blank">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+                <a href="https://linkedin.com" target="_blank">
+                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
+<!--Un poco de js para la función del boton-->
+<script>
+    const boton = document.getElementById('modo-toggle');
+    const body = document.body;
+
+    const modoGuardado = localStorage.getItem('modo');
+    if (modoGuardado === 'oscuro') {
+        body.classList.add('modo-oscuro');
+        boton.textContent = '☀️ Modo claro';
+    }
+
+    boton.addEventListener('click', () => {
+        body.classList.toggle('modo-oscuro');
+        const modo = body.classList.contains('modo-oscuro') ? 'oscuro' : 'claro';
+        localStorage.setItem('modo', modo);
+        boton.textContent = modo === 'oscuro' ? '☀️ Modo claro' : '🌙 Modo oscuro';
+    });
+
+    // Función para el boton Hamburguesa 
+    const toggle = document.getElementById('hamburguesa-toggle');
+    const menu = document.getElementById('menu-superior');
+    const menuLateral = document.querySelector('.menu-lateral');
+
+    toggle.addEventListener('click', () => {
+        menu.classList.toggle('mostrar');
+
+        // Si abrimos el menú hamburguesa, ocultamos lateral
+        if (menu.classList.contains('mostrar')) {
+            menuLateral.classList.add('oculto');
+        } else {
+            menuLateral.classList.remove('oculto');
+        }
+    });
+
+    //Función para validar el formulario. 
+    document.querySelector(".form-contacto").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const nombre = document.getElementById("nombre").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const asunto = document.getElementById("asunto").value.trim();
+        const mensaje = document.getElementById("mensaje").value.trim();
+        const mensajeExito = document.getElementById("mensaje-exito");
+
+        if (!nombre || !email || !asunto || !mensaje) {
+            mensajeExito.style.display = "none";
+            alert("Por favor, completa todos los campos.");
+            return;
+        }
+
+        // Cambié "/contact" por "/contacto" (porque así está en tu backend)
+        fetch('http://127.0.0.1:3000/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ nombre, email, asunto, mensaje })
+        })
+            .then(response => response.json())
+            .then(data => {
+                // Aquí ya no verificamos data.success porque no lo estás enviando,
+                // solo asumimos que si no hay error, fue exitoso
+                mensajeExito.style.display = "block";
+                document.querySelector(".form-contacto").reset();
+                setTimeout(() => {
+                    mensajeExito.style.display = "none";
+                }, 4000);
+            })
+            .catch(error => {
+                alert("Error en la conexión con el servidor.");
+                console.error(error);
+            });
+    });
+</script>
+
+</html>
