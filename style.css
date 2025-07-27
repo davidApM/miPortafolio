@@ -560,8 +560,7 @@ body.modo-oscuro .menu-lateral a {
     color: #a1bfd8;
 }
 
-body.modo-oscuro header,
-body.modo-oscuro footer,
+body.modo-oscuro header body.modo-oscuro footer,
 body.modo-oscuro .proyectos {
     background-color: #1e1e1e;
     color: #70d6ff;
@@ -708,7 +707,11 @@ body.modo-oscuro .proyecto h3 {
     .menu-superior {
         display: none;
         flex-direction: column;
-        background-color: #2563ebbf; 
+        background-color: #1e1e1e;
+        /*Color del menú hamburguesa*/
+        color: #a1bfd8;
+        /*Color del texto hamburguesa*/
+        font-family: 'Inter', sans-serif;
         position: absolute;
         top: 60px;
         right: 0;
@@ -717,9 +720,23 @@ body.modo-oscuro .proyecto h3 {
 
     .menu-superior ul {
         flex-direction: column;
-        padding: 0;
-        margin: 0;
+        padding: 5%;
+        margin: 5%;
     }
+
+    #menu-superior li a {
+        display: block;
+        padding: 8px 12px;
+        text-decoration: none;
+        color: #a1bfd8;
+        border-radius: 8px;
+    }
+
+    #menu-superior li a:hover {
+        background-color: #60a5fa;
+        color: white;
+    }
+
 
     .menu-superior.mostrar {
         display: flex;
