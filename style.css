@@ -531,6 +531,10 @@ textarea:focus {
     color: #ffe082;
 }
 
+.footer-redes a i {
+    margin-right: 6px;
+}
+
 /* MODO OSCURO */
 body.modo-oscuro {
     background-color: #121212;

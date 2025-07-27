@@ -7,6 +7,8 @@
     <!-- Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="imagenes/logo.jpg" type="image/png">
+    <!-- ...Link oara los icon ... -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Portafolio</title>
     <link rel="stylesheet" href="style.css" />
 </head>
@@ -18,9 +20,9 @@
         <button class="hamburguesa" id="hamburguesa-toggle">☰</button>
         <nav id="menu-superior" class="menu-superior">
             <ul class="menu-superior">
-                <li><a href="./index.html">Inicio</a></li>
-                <li><a href="./perfil.html">Perfil</a></li>
-                <li><a href="./formulario.html">Contacto</a></li>
+                <li><a href="./index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="./perfil.html"><i class="fas fa-user"></i> Perfil</a></li>
+                <li><a href="./formulario.html"><i class="fas fa-envelope"></i> Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -31,12 +33,13 @@
             <h2>Menú</h2>
             <ul>
                 <ul>
-                    <li><a href="index.html#sobre-mi">Sobre mí</a></li>
-                    <li><a href="index.html#habilidades">Habilidades</a></li>
-                    <li><a href="index.html#redes-sociales">Redes sociales</a></li>
+                    <ul>
+                        <li><a href="#sobre-mi"><i class="fas fa-user"></i> Sobre mí</a></li>
+                        <li><a href="#habilidades"><i class="fas fa-code"></i> Habilidades</a></li>
+                        <li><a href="#redes-sociales"><i class="fas fa-share-alt"></i> Redes sociales</a></li>
+                    </ul>
                 </ul>
-            </ul>
-            <button id="modo-toggle">🌙 Modo oscuro</button>
+                <button id="modo-toggle">🌙 Modo oscuro</button>
         </aside>
 
         <main class="contenido-principal-Proyectos">
