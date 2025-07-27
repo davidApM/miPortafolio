@@ -699,40 +699,50 @@ body.modo-oscuro .proyecto h3 {
     }
 
     /* MENÚ SUPERIOR */
-    .menu-superior {
-        display: none;
-        flex-direction: column;
-        background-color: #e9edf1;
-        color: #a1bfd8;
-        font-family: 'Inter', sans-serif;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        width: 100%;
-    }
+   .menu-superior {
+    display: none;
+    flex-direction: column;
+    background-color: #e9edf1;
+    color: #a1bfd8;
+    font-family: 'Inter', sans-serif;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
 
-    .menu-superior.mostrar {
-        display: flex;
-    }
+.menu-superior.mostrar {
+    display: flex;
+}
 
-    .menu-superior a {
-        text-decoration: none;
-        color: #2563eb;
-    }
+.menu-superior ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-    .menu-superior ul li a {
-        display: block;
-        padding: 0.5rem 1rem;
-        border-radius: 8px;
-        transition: background-color 0.3s ease, color 0.3s ease;
-        cursor: pointer;
-    }
+.menu-superior a {
+    text-decoration: none;
+    color: #2563eb;
+}
 
-    .menu-superior ul li a:hover {
-        background-color: #2563eb;
-        color: white;
-    }
+.menu-superior ul li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.menu-superior ul li a:hover {
+    background-color: #2563eb;
+    color: white;
+}
+
 
     /* PERFIL */
     .contenido-principal-Perfil {
