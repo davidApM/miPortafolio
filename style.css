@@ -40,7 +40,7 @@ header {
 .hamburguesa {
     display: none;
     font-size: 24px;
-    background: #2563eb;
+    background: none; 
     border: none;
     cursor: pointer;
     color: white; 
