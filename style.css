@@ -37,6 +37,7 @@ header {
 }
 
 /* Botón hamburguesa */
+/*Este código modifica la imagen de hamburguesa*/
 .hamburguesa {
     display: none;
     font-size: 24px;
@@ -707,12 +708,10 @@ body.modo-oscuro .proyecto h3 {
     .menu-superior {
         display: none;
         flex-direction: column;
-        background-color: #1e1e1e;
-        /*Color del menú hamburguesa*/
-        color: #a1bfd8;
-        /*Color del texto hamburguesa*/
+        background-color: #e9edf1;  /*Color del menú hamburguesa*/
+        color: #a1bfd8;    /*Color del texto hamburguesa*/
         font-family: 'Inter', sans-serif;
-        position: absolute;
+        position: fixed;
         top: 60px;
         right: 0;
         width: 100%;
@@ -724,19 +723,28 @@ body.modo-oscuro .proyecto h3 {
         margin: 5%;
     }
 
-    #menu-superior li a {
+    /*Animación cuando se pase el mouse*/
+    #menu-superior ul li a {
         display: block;
-        padding: 8px 12px;
-        text-decoration: none;
-        color: #a1bfd8;
+        /* Hace que el enlace sea un bloque completo */
+        padding: 0.5rem 1rem;
+        /* Espaciado interno para el "rectángulo" */
         border-radius: 8px;
+        /* Bordes redondeados */
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    #menu-superior li a:hover {
-        background-color: #60a5fa;
+    #menu-superior ul li a:hover {
+        background-color: #2563eb;
+        /* Fondo azul al pasar mouse */
         color: white;
+        /* Texto blanco */
     }
 
+    #menu-superior a {
+        text-decoration: none;
+        color: #2563eb;
+    }
 
     .menu-superior.mostrar {
         display: flex;
