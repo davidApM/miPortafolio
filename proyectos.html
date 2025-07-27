@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="imagenes/logo.jpg" type="image/png">
     <title>Portafolio</title>
     <link rel="stylesheet" href="style.css" />
 </head>
@@ -14,10 +15,11 @@
 
     <header>
         <h1>Mi Portafolio Personal</h1>
-        <nav>
+        <button class="hamburguesa" id="hamburguesa-toggle">☰</button>
+        <nav id="menu-superior" class="menu-superior">
             <ul class="menu-superior">
                 <li><a href="./index.html">Inicio</a></li>
-                <li><a href="proyectos.html#proyectos">Proyectos</a></li>
+                <li><a href="./perfil.html">Perfil</a></li>
                 <li><a href="./formulario.html">Contacto</a></li>
             </ul>
         </nav>
@@ -28,12 +30,11 @@
         <aside class="menu-lateral">
             <h2>Menú</h2>
             <ul>
-                <li><a href="./perfil.html">Perfil</a></li>
-                <li><a href="./index.html#sobre-mi">Sobre mí</a></li>
-                <li><a href="./proyectos.html">Proyectos</a></li>
-                <li><a href="./index.html#habilidades">Habilidades</a></li>
-                <li><a href="./formulario.html">Contacto</a></li>
-                <li><a href="./index.html#redes-sociales">Redes sociales</a></li>
+                <ul>
+                    <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+                    <li><a href="index.html#habilidades">Habilidades</a></li>
+                    <li><a href="index.html#redes-sociales">Redes sociales</a></li>
+                </ul>
             </ul>
             <button id="modo-toggle">🌙 Modo oscuro</button>
         </aside>
@@ -110,6 +111,14 @@
         localStorage.setItem('modo', modo);
         boton.textContent = modo === 'oscuro' ? '☀️ Modo claro' : '🌙 Modo oscuro';
     });
+    // Función para el boton Hamburguesa 
+    const toggle = document.getElementById('hamburguesa-toggle');
+    const menu = document.getElementById('menu-superior');
+
+    toggle.addEventListener('click', () => {
+        menu.classList.toggle('mostrar');
+    });
+
 </script>
 
 </html>

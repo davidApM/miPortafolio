@@ -12,30 +12,38 @@ body {
     color: #1c1c1e;
 }
 
-/* Menú superior */
+/* Estilos del header */
 header {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
     background-color: #2563eb;
     color: white;
-    padding: 1rem;
-    text-align: center;
 }
 
-.menu-superior {
+/* Menú por defecto */
+.menu-superior ul {
     display: flex;
-    justify-content: center;
     list-style: none;
-    margin-top: 1rem;
-    flex-wrap: wrap;
-}
-
-.menu-superior li {
-    margin: 0 1rem;
+    gap: 15px;
 }
 
 .menu-superior a {
-    color: white;
+    color: white; 
     text-decoration: none;
     font-weight: bold;
+}
+
+/* Botón hamburguesa */
+.hamburguesa {
+    display: none;
+    font-size: 24px;
+    background: #2563eb;
+    border: none;
+    cursor: pointer;
+    color: white; 
 }
 
 /* Contenedor general */
@@ -672,5 +680,32 @@ body.modo-oscuro .proyecto h3 {
 
     .descripcion-perfil {
         font-size: 0.95rem;
+    }
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .hamburguesa {
+        display: block;
+    }
+
+    .menu-superior {
+        display: none;
+        flex-direction: column;
+        background-color:#2563eb;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+    }
+
+    .menu-superior ul {
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu-superior.mostrar {
+        display: flex;
     }
 }
