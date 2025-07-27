@@ -546,8 +546,7 @@ body.modo-oscuro a {
 }
 
 
-body.modo-oscuro h1,
-body.modo-oscuro .menu-superior a {
+body.modo-oscuro h1{
     color: #a1bfd8
 }
 
@@ -564,7 +563,7 @@ body.modo-oscuro li {
 
 body.modo-oscuro .menu-lateral a,
 body.modo-oscuro .menu-superior a {
-    color: #a1bfd8;
+    color: #70d6ff;
 }
 
 body.modo-oscuro header,
